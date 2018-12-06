@@ -234,7 +234,7 @@ class Groups_Admin_Posts {
 					$output .= '</div>'; // .bulk-edit-groups
 					$output .= '</fieldset>'; // .inline-edit-col-right
 
-					$output .= wp_nonce_field( 'post-group', 'bulk-post-group-nonce', true, false );
+					//$output .= wp_nonce_field( 'post-group', 'bulk-post-group-nonce', true, false );
 
 					echo $output;
 				}
