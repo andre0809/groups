@@ -321,7 +321,7 @@ class Groups_Admin_Posts {
 						}
 
 						if ( !empty( $group_ids ) ) {
-							if ( $include_unrestricted ) {
+							if ( $include_unrestricted ==TRUE ) {
 								// meta_query does not handle a conjunction
 								// on the same meta field correctly
 								// (at least not up to WordPress 3.7.1)
@@ -354,7 +354,7 @@ class Groups_Admin_Posts {
 									)
 								);
 							}
-						} else if ( $include_unrestricted ) {
+						} else if ( $include_unrestricted == TRUE ) {
 							$query->query_vars['meta_query'] = array (
 								array (
 									'key'     => Groups_Post_Access::POSTMETA_PREFIX . Groups_Post_Access::READ,
