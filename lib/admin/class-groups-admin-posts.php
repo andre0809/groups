@@ -421,7 +421,17 @@ class Groups_Admin_Posts {
 							tm.meta_value IN $groups
 						)
 						";
-				} else {
+				}
+				elseif ($group_ids==NULL) {
+					$where .= "
+						AND $wpdb->posts.ID IN (
+							SELECT post_id
+							FROM $wpdb->postmeta pm
+						)
+						";
+				}
+
+				else {
 					$where .= "
 						AND $wpdb->posts.ID IN (
 							SELECT post_id
